@@ -6,7 +6,7 @@ const { Configuration, OpenAIApi } = require("openai");
 const app = express();
 
 app.use(cors({
-  origin: "http://ninexnine.co.kr" // ✅ 여기에 여러분의 실제 도메인 입력
+  origin: ["http://ninexnine.co.kr", "https://ninexnine.co.kr", "https://www.ninexnine.co.kr"] // ✅ 여기에 여러분의 실제 도메인 입력
 }));
 app.use(express.json());
 
