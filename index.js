@@ -5,9 +5,17 @@ const { Configuration, OpenAIApi } = require("openai");
 
 const app = express();
 
+const cors = require("cors");
+
 app.use(cors({
-  origin: ["http://ninexnine.co.kr", "https://ninexnine.co.kr", "https://www.ninexnine.co.kr"] // ✅ 여기에 여러분의 실제 도메인 입력
+  origin: [
+    "http://ninexnine.co.kr",
+    "https://ninexnine.co.kr",
+    "https://www.ninexnine.co.kr"
+  ]
 }));
+app.options("*", cors()); // ✅ preflight 허용
+
 app.use(express.json());
 
 const openai = new OpenAIApi(new Configuration({
