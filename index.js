@@ -5,8 +5,6 @@ const { Configuration, OpenAIApi } = require("openai");
 
 const app = express();
 
-const cors = require("cors");
-
 app.use(cors({
   origin: [
     "http://ninexnine.co.kr",
